@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
   lintOnSave: false,
-  
+  publicPath: '/monaco-apptest/dist/',
   configureWebpack: {
     plugins: [
       new webpack.NormalModuleReplacementPlugin(/msun-lib-ui[/\\]lib[/\\]styles[/\\](.*)\.css/),
