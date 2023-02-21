@@ -1,8 +1,8 @@
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin') // 引入
 const webpack = require('webpack');
- 
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/monaco-apptest/dist/' : '/',
   lintOnSave: false,
   
   configureWebpack: {

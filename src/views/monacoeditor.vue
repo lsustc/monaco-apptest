@@ -63,6 +63,7 @@ export default {
       let editorOptions = Object.assign(this.defaultOpts, this.opts);
       if (!this.isDiff) {
         // 初始化编辑器实例
+        console.log('editor配置', editorOptions)
         this.monacoEditor = monaco.editor.create(
           this.$refs.container,
           editorOptions
@@ -78,11 +79,11 @@ export default {
         editorOptions.language = "javascript";
         // editorOptions.inlineHints = true;
         // 初始化编辑器实例
-        this.monacoDiffInstance = monaco.editor.createDiffEditor(
+        this.monacoEditor = monaco.editor.createDiffEditor(
           this.$refs["container"],
           editorOptions
         );
-        this.monacoDiffInstance.setModel({
+        this.monacoEditor.setModel({
           original: monaco.editor.createModel(
             this.oldValue,
             editorOptions.language
@@ -95,7 +96,7 @@ export default {
       }
     },
     upDateDiff(val) {
-      this.monacoDiffInstance.updateOptions({
+      this.monacoEditor.updateOptions({
         renderSideBySide: !val,
       });
     },
@@ -119,7 +120,7 @@ export default {
       return xhr.status === okStatus ? xhr.responseText : null;
     },
     shuru() {
-      this.monacoEditor.setValue("hy");
+      this.monacoEditor.setValue && this.monacoEditor.setValue("hy");
     },
   },
 };
