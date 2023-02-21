@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5ef6f2e2bb11419f9811e3736a8490f7.js"
+  "/monaco-apptest/dist/precache-manifest.38a0262fa1676b014388c3c62f1b7d1c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "monaco-app"});
